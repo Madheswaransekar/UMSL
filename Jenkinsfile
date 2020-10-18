@@ -14,4 +14,10 @@ node {
         sh "${mvnHome}/bin/mvn sonar:sonar"
         }
     }
+    
+    stage ('submit stack'){
+        steps{
+        sh "aws cloudformation create-stack --stack-name <<stack_name>> --template-body file:// 
+        }
+    }
 }
