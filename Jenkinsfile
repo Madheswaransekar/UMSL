@@ -17,7 +17,7 @@ node {
     
     stage ('submit stack'){
         steps{
-        sh "aws cloudformation create-stack --stack-name <<stack_name>> --template-body file:// 
+        sh "aws cloudformation create-stack --stack-name ecs-stack --template-body file://ecs.yml --region 'us-east-1'"
         }
     }
 }
